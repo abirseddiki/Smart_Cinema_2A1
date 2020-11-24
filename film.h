@@ -35,10 +35,6 @@ public:
     bool modifier(int, QString, QString, QString, QString, QDate);
     bool supprimer(int);
 
-
-   /* bool removeRows(int position, int rows, const QModelIndex &index = QModelIndex());
-    void beginRemoveRows(const QModelIndex &parent, int first, int last);
-    void endRemoveRows();*/
 };
 
 #endif // FILM_H

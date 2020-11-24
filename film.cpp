@@ -4,6 +4,7 @@
 #include <QDate>
 #include <QStringListModel>
 
+
 film::film()
 {
     this->id = 0;

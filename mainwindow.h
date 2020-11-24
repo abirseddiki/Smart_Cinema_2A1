@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "film.h"
-
 #include <QMainWindow>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,6 +16,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QVariant data(const QModelIndex &index, int role) const;
+
+
+
 ;
 
 private slots:
@@ -31,5 +34,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     film tmpFilm;
+    //QSound *son;
+
 };
 #endif // MAINWINDOW_H

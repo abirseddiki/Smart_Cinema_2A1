@@ -10,6 +10,7 @@
 #include <QSqlTableModel>
 
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -34,19 +35,21 @@ void MainWindow::on_ajouter_clicked()
     QString duree = ui->lineEdit_duree->text();
     QDate date_sortie = ui->dateEdit_ds->date();
     film f(id, nom, genre, description, duree, date_sortie);
-    bool test = f.ajouter();
+    if (id!=0 && id>0)
+    {
+        bool test = f.ajouter();
         if(test)
         {
-        ui->tableView_films->setModel(tmpFilm.afficher());
-        QMessageBox::information(nullptr, QObject::tr("Ajout film") ,
+            ui->tableView_films->setModel(tmpFilm.afficher());
+            QMessageBox::information(nullptr, QObject::tr("Ajout film") ,
                      QObject::tr("Film ajouté avec succès.\n" "Click cancel to exit"), QMessageBox::Cancel);
+        }
     }
-    else
-    {
-        QMessageBox::critical(nullptr, QObject::tr("Ajout film") ,
+        else
+        {
+            QMessageBox::critical(nullptr, QObject::tr("Ajout film") ,
                      QObject::tr("Ajout échoué.\n" "Click cancel to exit"), QMessageBox::Cancel);
-    }
-
+        }
     foreach(QLineEdit *widget, this->findChildren<QLineEdit*>())
     {
     widget->clear();
@@ -71,7 +74,7 @@ void MainWindow::on_tableView_films_activated(const QModelIndex &index)
            // ui->dateEdit_ds->setDate(query.value(5));
         }
     }
-    ui->tableView_films->setStyleSheet("QTableView { selection-color: black; selection-background-color: green; }");
+    ui->tableView_films->setStyleSheet("QTableView { selection-color: black; selection-background-color: orange; }");
 
 }
 

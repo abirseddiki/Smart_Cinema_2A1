@@ -51,7 +51,7 @@ QTabBar::tab {
     min-width: 8ex;
     padding: 2px;
 	background : qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
-                                      stop: 0 white, stop: 0.4 lightblue);
+                                      stop: 0 white, stop: 0.4 white);
  
 }</string>
     </property>
@@ -172,7 +172,7 @@ QTabBar::tab {
     background-color:QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop: 1 #ccf);
 padding: 1px;
 border-style: solid;
-border: 1px solid grey;
+border: 1px solid black;
 border-radius: 4px;
 
 }</string>
@@ -248,11 +248,12 @@ background-color:QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop:
        <property name="styleSheet">
         <string notr="true">QPushButton
 {
-  border: 1px solid green;
+  border: 1px solid blue;
   border-radius: 8px;
   padding: 0 8px;
 background: lightgrey;
-}</string>
+}
+QPushButton:hover:!pressed{ color: blue}</string>
        </property>
        <property name="text">
         <string>Ajouter</string>
@@ -261,19 +262,20 @@ background: lightgrey;
       <widget class="QPushButton" name="pushButton_update">
        <property name="geometry">
         <rect>
-         <x>130</x>
+         <x>124</x>
          <y>360</y>
-         <width>75</width>
+         <width>81</width>
          <height>23</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton
 {
-  border: 1px solid grey;
+  border: 1px solid orange;
   border-radius: 8px;
   background : lightgrey;
 }
+QPushButton:hover:!pressed{ color: orange}
 font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
@@ -396,7 +398,7 @@ border-radius: 4px;
   border-radius: 8px;
   background : lightgrey;
 }
-</string>
+QPushButton:hover:!pressed{ color: purple}</string>
        </property>
        <property name="text">
         <string>Rechercher</string>
@@ -435,8 +437,8 @@ border-radius: 4px;
        </property>
        <property name="styleSheet">
         <string notr="true">QTableView QTableCornerButton::section {
-    background: red;
-    border: 2px outset red;
+    background: orange;
+    border: 2px outset lightblue;
 }
 QTableView::indicator:unchecked {
     background-color: #d7d6d5
@@ -460,7 +462,7 @@ QTableView::indicator:unchecked {
   background : lightgrey;
 
 }
-</string>
+QPushButton:hover:!pressed{ color: red}</string>
        </property>
        <property name="text">
         <string>Supprimer</string>
@@ -481,6 +483,9 @@ QTableView::indicator:unchecked {
         <height>401</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="title">
        <string>Ajouter projection</string>
       </property>
@@ -492,6 +497,9 @@ QTableView::indicator:unchecked {
          <width>81</width>
          <height>16</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Date</string>
@@ -506,6 +514,9 @@ QTableView::indicator:unchecked {
          <height>16</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
        <property name="text">
         <string>Heure</string>
        </property>
@@ -519,21 +530,32 @@ QTableView::indicator:unchecked {
          <height>16</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
        <property name="text">
         <string>ID du film</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_45">
+      <widget class="QLineEdit" name="lineEdit_idproj">
        <property name="geometry">
         <rect>
          <x>130</x>
          <y>140</y>
-         <width>131</width>
+         <width>141</width>
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">
+padding: 1px;
+border-style: solid;
+border: 1px solid grey;
+border-radius: 4px;
+</string>
+       </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_45">
+      <widget class="QPushButton" name="pushButton_update_proj">
        <property name="geometry">
         <rect>
          <x>120</x>
@@ -542,34 +564,54 @@ QTableView::indicator:unchecked {
          <height>23</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+  border: 1px solid grey;
+  border-radius: 8px;
+  background : lightgrey;
+}
+font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
        <property name="text">
-        <string>Annuler</string>
+        <string>Mettre à jour</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_85">
        <property name="geometry">
         <rect>
-         <x>29</x>
+         <x>30</x>
          <y>180</y>
-         <width>91</width>
-         <height>16</height>
+         <width>111</width>
+         <height>21</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Numero de la salle</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_5">
+      <widget class="QSpinBox" name="spinBox_salle">
        <property name="geometry">
         <rect>
-         <x>130</x>
+         <x>160</x>
          <y>180</y>
          <width>51</width>
          <height>22</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">
+padding: 1px;
+border-style: solid;
+border: 1px solid grey;
+border-radius: 4px;
+</string>
+       </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="pushButton_ajouter_proj">
        <property name="geometry">
         <rect>
          <x>210</x>
@@ -578,28 +620,55 @@ QTableView::indicator:unchecked {
          <height>23</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+  border: 1px solid green;
+  border-radius: 8px;
+  padding: 0 8px;
+background: lightgrey;
+}</string>
+       </property>
        <property name="text">
         <string>Ajouter</string>
        </property>
       </widget>
-      <widget class="QDateEdit" name="dateEdit">
+      <widget class="QDateEdit" name="dateEdit_proj">
        <property name="geometry">
         <rect>
          <x>130</x>
          <y>60</y>
-         <width>131</width>
+         <width>141</width>
          <height>22</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">
+    background-color:QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop: 1 #ccf);
+padding: 1px;
+border-style: solid;
+border: 1px solid grey;
+border-radius: 4px;
+</string>
+       </property>
       </widget>
-      <widget class="QTimeEdit" name="timeEdit">
+      <widget class="QTimeEdit" name="timeEdit_proj">
        <property name="geometry">
         <rect>
          <x>130</x>
          <y>100</y>
-         <width>131</width>
+         <width>141</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+    background-color:QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop: 1 #ccf);
+padding: 1px;
+border-style: solid;
+border: 1px solid grey;
+border-radius: 4px;
+</string>
        </property>
       </widget>
      </widget>
@@ -608,14 +677,14 @@ QTableView::indicator:unchecked {
        <rect>
         <x>310</x>
         <y>10</y>
-        <width>461</width>
+        <width>491</width>
         <height>401</height>
        </rect>
       </property>
       <property name="title">
        <string>Liste des films</string>
       </property>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="lineEdit_rech">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -629,11 +698,19 @@ QTableView::indicator:unchecked {
          <family>Yu Gothic UI Semilight</family>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">
+padding: 1px;
+border-style: solid;
+border: 1px solid grey;
+border-radius: 4px;
+</string>
+       </property>
        <property name="text">
         <string>date..</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="pushButton_rechproj">
        <property name="geometry">
         <rect>
          <x>340</x>
@@ -642,18 +719,36 @@ QTableView::indicator:unchecked {
          <height>23</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+  border: 1px solid grey;
+  border-radius: 8px;
+  background : lightgrey;
+}
+font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
        <property name="text">
         <string>Rechercher</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_9">
+      <widget class="QPushButton" name="pushButton_pdf_proj">
        <property name="geometry">
         <rect>
-         <x>340</x>
+         <x>380</x>
          <y>360</y>
          <width>75</width>
          <height>23</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+  border: 1px solid grey;
+  border-radius: 8px;
+  background : lightgrey;
+}
+font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Exporter</string>
@@ -664,9 +759,31 @@ QTableView::indicator:unchecked {
         <rect>
          <x>15</x>
          <y>71</y>
-         <width>431</width>
-         <height>281</height>
+         <width>461</width>
+         <height>271</height>
         </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_supp_proj">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>360</y>
+         <width>75</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+  border: 1px solid red;
+  border-radius: 8px;
+  background : lightgrey;
+}
+font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
        </property>
       </widget>
      </widget>
